@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+  <!--jquery-->
+
+
+
+  <script src="js/jquery-3.6.4.min.js"></script>
+
+
+  <!-- <script src="https://code.jquery.com/jquery-migrate-1.0.0.js"></script> -->
+
+  <!-- Bootstrap CSS -->
+  <!-- <script src="js/bootstrap.js"></script> -->
+
+
+
+  <!-- <script type="text/javascript" src="js/jquery.mousewheel-3.0.4.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.fancybox-1.3.4.pack.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox-1.3.4.css" media="screen" /> -->
+
+
+  <script src="js/bootstrap.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="css/all.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css">
+
+
+  <script type='text/javascript' src='js/3d-functions.js'> </script>
+  <script type="text/javascript" src="js/gallery_generator.js"></script>
+
+  <script type='text/javascript' src="js/getJsonData.js"></script>
+
+
+  <script type='text/javascript' src="js/page-control.js"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+  <!-- <script src="js/fancybox.js"></script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="css/fancybox.css"> -->
+
+
+
+
+  <!-- <script src="js/popper.min.js"></script> -->
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+  <script src="js/jquery.fancybox.min.js"></script> -->
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> -->
+
+  <!-- <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+  <script type="text/javascript" src="/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+
+  <script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script> -->
+
+  <!-- <link rel="stylesheet" href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" /> -->
+
+
+  <!-- Link in some fonts — Not used because we finally installed the fonts
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> 
+    -->
+  <title>Coca Cola 3D App template</title>
+
+</head>
+
+<body>
+
+  <!-- Include the x3dom JavaScript -->
+  <script type='text/javascript' src='js/x3dom.js'></script>
+
+
+  <!-- Logo and navigation bar -->
+  <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola">
+    <div class="container">
+      <!-- Brand -->
+      <div class="logo">
+        <a class="navbar-brand" href="#">
+          <h1>1</h1>
+          <h1>oca</h1>
+          <h2>Cola</h2>
+          <h3>Journey</h3>
+          <p>Refreshing the world, one story at a time</p>
+        </a>
+      </div>
+
+      <!-- Collapsible Navbar Menu Icon -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Link Menu item button to the links class navbar-collapse selector -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto"> <!-- Use mx-auto to align centre, default to left or use mr-auto -->
+          <!-- <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li> -->
+
+          <!-- Dropdown -->
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Drinks</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Coca Cola</a>
+              <a class="dropdown-item" href="#">Sprite</a>
+              <a class="dropdown-item" href="#">Dr Pepper</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+
+
+
+          <li class="nav-item">
+            <button type="button" class="nav-link" onclick="setContent('home')">Home</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link" onclick="setContent('coke')">Coke</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link" onclick="setContent('sprite')">Sprite</button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link" onclick="setContent('pepper')">Dr Pepper</button>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- This is the main contents of the page, it has a background image across 1 column, followed by three columns holding cards in a row for the 3 images and associated texts
+    -->
+  <div class="container main_contents">
+    <div class="row"> <!-- Main_3D Image or Carousel -->
+      <div class="col-sm-12">
+        <div id="main_3d_image">
+          <div id="main_text" class="col-xs-12 col-sm-4">
+            <h2>Coca Cola Great Britain</h2>
+            <h3>Founded by Dr John S Pemberton</h3>
+            <p>The Coca Cola Company is the world's leading manufacturer, marketer and distributor of non-alcoholic
+              beverage concentrates and syrups, and produces nearly 400 brands.</p>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item col">
+              <a id="el1" class="nav-link text-center" href="#">Element 1</a>
+            </li>
+            <li class="nav-item col">
+              <a id="el2" class="nav-link text-center" href="#">Element 2</a>
+            </li>
+            <li class="nav-item col">
+              <a id="el3" class="nav-link text-center" href="#">Element 3</a>
+            </li>
+            <li class="nav-item col">
+              <a id="el4" class="nav-link text-center" href="#">Element 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+
+    <div class="row">
+
+      <!-- <button type="button" onclick="changeTexture('Maps/can_texture_sprite.jpg', 'can__test')">Sprite</button>
+          <button type="button" onclick="changeTexture('Maps/can_texture.jpg', 'can__test')">Coke</button> -->
+
+
+      <div id="interaction">
+        <!-- <button type="button" class="btn btn-primary" onclick="wireFrame()">WIREFRAME</button>
+          
+
+          <button type="button" class="btn btn-primary" onclick="switchCamera('CameraFront')">Front</button>
+          <button type="button" class="btn btn-primary" onclick="switchCamera('CameraBack')">Back</button>
+          <button type="button" class="btn btn-primary" onclick="switchCamera('CameraTop')">Top</button>
+          <button type="button" class="btn btn-primary" onclick="switchCamera('CameraLeft')">Left</button>
+          <button type="button" class="btn btn-primary" onclick="switchCamera('CameraRight')">Right</button>
+          <button type="button" class="btn btn-primary" onclick="switchCamera('CameraBottom')">Bottom</button>
+
+
+          <button type="button" onclick="headLight()">LIGHT</button>
+          <button type="button" onclick="backColour()">BACKC</button>
+          <button type="button" onclick="spin('coke-model')">SPIN1</button>
+          <button type="button" onclick="setTrans('1.0')">Trans</button>
+          
+          <input type="range" min="0" max="1" value="0.5" step="0.01" id="myRange" oninput="setTrans(1-this.value)" />
+
+          <input type="color" id="colorPicker" oninput="handleColorChange(this.value)" onchange="handleColorChange(this.value)" /> -->
+
+
+
+      </div>
+
+    </div>
+
+    <div class="container main_contents">
+
+
+      <!-- Row of cards on the grid -->
+      <div class="row">
+        <!-- Coca Cola Column -->
+        <div class="col" id="coke-card">
+          <div class="card w-100">
+
+
+
+
+            <div class="card-body">
+              <h3 class="card-title">Coca Cola</h3>
+
+              <x3d width='100%' height='100%' id="coke-model">
+                <scene>
+                  <inline id = "3dCanvas" nameSpaceName="coke-model" mapDEFToID="true" onclick=';' url="models/CanV1.x3d">
+                  </inline>
+                </scene>
+              </x3d>
+
+
+              <p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity.
+                One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, the mixture was
+                combined with carbonated water and sampled by customers who all agreed - this new drink was something
+                special!</p>
+              <a href="#" class="btn btn-primary">Find out more ...</a>
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Sprite Column -->
+        <div class="col" id="sprite-card" style="display:none">
+          <div class="card w-100">
+
+
+
+            <div class="card-body">
+              <h3 class="card-title">Sprite</h3>
+
+              <x3d width='100%' height='100%' id="sprite-model">
+                <scene>
+                  <inline nameSpaceName="sprite-model" mapDEFToID="true" onclick=';' url="models/SpriteV3.x3d">
+                  </inline>
+                </scene>
+              </x3d>
+
+              <p class="card-text">First introduced in 1961, crisp, refreshing, clean-tasting Sprite is now the world's
+                leading lemon and lime flavoured soft drink and is sold in more than 190 different countries. Sprite
+                Zero, part of our no sugar Zero range, offers the delicious lemon lime taste of Sprite without the sugar
+                or calories.</p>
+              <a href="#" class="btn btn-primary">Find out more ...</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Dr Pepper Column -->
+        <div class="col" id="pepper-card" style="display:none;">
+          <div class="card w-100">
+            <a href="#">
+              <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
+            </a>
+            <div class="card-body">
+              <h3 class="card-title">Dr Pepper</h3>
+              <p class="card-text">Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well
+                over a century and it's still the same, with that distinctive flavour you just can't quite put your
+                tongue on. It was created by Texas pharmacist Charles Alderton in 1885.</p>
+              <a href="#" class="btn btn-primary">Find out more ...</a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col" id="3d-editor">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">3D Object Editor</h5>
+
+              <!-- Camera Controls -->
+              <div class="mb-4">
+                <h6>Camera Controls</h6>
+                <button type="button" class="btn btn-primary mr-2" onclick="switchCamera('CameraFront')">Front</button>
+                <button type="button" class="btn btn-primary mr-2" onclick="switchCamera('CameraBack')">Back</button>
+                <button type="button" class="btn btn-primary mr-2" onclick="switchCamera('CameraLeft')">Left</button>
+                <button type="button" class="btn btn-primary mr-2" onclick="switchCamera('CameraRight')">Right</button>
+                <button type="button" class="btn btn-primary mr-2" onclick="switchCamera('CameraTop')">Top</button>
+                <button type="button" class="btn btn-primary mr-2"
+                  onclick="switchCamera('CameraBottom')">Bottom</button>
+
+              </div>
+
+
+
+              <!-- Animation -->
+              <div class="mb-4">
+                <h6>Animation</h6>
+                <button type="button" onclick="spin('coke-model')">Play/Pause</button>
+                <button type="button" onclick="setSpin(0)">Spin Y</button>
+                <button type="button" onclick="setSpin(1)">Spin Y Opp</button>
+                <button type="button" onclick="setSpin(2)">Spin X</button>
+                <button type="button" onclick="setSpin(3)">Spin Z</button>
+
+              </div>
+
+
+              <!-- Lighting Section -->
+              <div class="mb-4">
+                <h6>Lighting</h6>
+
+                <button type="button" class="btn btn-secondary mr-2" onclick="headLight()">Toggle Light</button>
+
+                <button class="btn btn-secondary mr-2">Toggle Light</button>
+
+                <button class="btn btn-secondary mr-2">Change Color</button>
+              </div>
+
+              <!-- Materials Section -->
+              <div class="mb-4">
+                <h6>Materials</h6>
+
+
+                <button type="button" class="btn btn-secondary mr-2"
+                  onclick="setTexture('texture/sprite_texture2.jpg')">TEX</button>
+                <button type="button" class="btn btn-secondary mr-2"
+                  onclick="setTexture('texture/can_texture.jpg')">TEX</button>
+
+
+                <button type="button" onclick="setTrans('1.0')">Trans</button>
+                <label for="slider">Opacity:</label>
+                <input type="range" class="form-control-range mb-2" min="0" max="1" value="0.5" step="0.01" id="myRange"
+                  oninput="setTrans(1-this.value)" />
+                <label for="colorPicker">Color:</label>
+                <input type="color" id="colorPicker" class="form-control mb-2" oninput="handleColorChange(this.value)"
+                  onchange="handleColorChange(this.value)" />
+
+
+                <button type="button" class="btn btn-primary" onclick="wireFrame()">WIREFRAME</button>
+
+
+
+
+
+
+              </div>
+
+              <!-- Environment Section -->
+              <div>
+                <h6>Environment</h6>
+
+                <button type="button" class="form-control mb-2" onclick="backColour()">BACKCOlor</button>
+
+                <label for="backgroundColorPicker">Background Color:</label>
+                <input type="color" class="form-control mb-2" id="backgroundColorPicker">
+                <label for="ambientColorPicker">Ambient Color:</label>
+                <input type="color" class="form-control" id="ambientColorPicker">
+              </div>
+
+              <button type="button" class="form-control mb-2" onclick="set3dScene('coke')">c</button>
+              <button type="button" class="form-control mb-2" onclick="set3dScene('sprite')">s</button>
+              <button type="button" class="form-control mb-2" onclick="set3dScene('pepper')">p</button>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+      </div>
+    </div>
+    <!-- Row of cards on the grid -->
+    <div class="row">
+
+
+
+      <!-- Coca Cola Column -->
+      <div class="col-sm-4">
+        <div class="card">
+          <a href="#">
+            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/coca_cola.jpg" alt="Coca Cola">
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Coca Cola</h3>
+            <p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity.
+              One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, the mixture was
+              combined with carbonated water and sampled by customers who all agreed - this new drink was something
+              special!</p>
+            <a href="#" class="btn btn-primary">Find out more ...</a>
+
+            <!-- TEST AREA FOR GALLERY-->
+
+            <table id="gallery">
+
+            </table>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Sprite Column -->
+      <div class="col-sm-4">
+        <div class="card">
+          <a href="#">
+            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/sprite.jpg" alt="Sprite">
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Sprite</h3>
+
+            <div id="title_home"></div>
+            <div id="subTitle_home"></div>
+            <div id="description_home"></div>
+
+            <a href="#" class="btn btn-primary">Find out more ...</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dr Pepper Column -->
+      <div class="col-sm-4">
+        <div class="card">
+          <a href="#">
+            <img class="card-img-top img-fluid img-thumbnail" src="assets/images/dr_pepper.jpg" alt="Dr Pepper">
+          </a>
+          <div class="card-body">
+            <h3 class="card-title">Dr Pepper</h3>
+            <p class="card-text">Dr Pepper's unique, sparkling blend of 23 fruit flavours has been around for well over
+              a century and it's still the same, with that distinctive flavour you just can't quite put your tongue on.
+              It was created by Texas pharmacist Charles Alderton in 1885.</p>
+            <a href="#" class="btn btn-primary">Find out more ...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Your 3D App footer -->
+  <nav class="navbar navbar-expand-sm footer">
+    <div class="container">
+      <div class="navbar-text float-left copyright">
+        <p><span class="align-baseline"></span>&copy Web 3D Apps </span></p>
+      </div>
+      <div class="navbar-text social">
+        <a href="#"><i class="fab fa-github-square fa-2x fa-pull-right"></i></a>
+        <a href="#"><i class="fab fa-google-plus-square fa-2x fa-pull-right"></i></a>
+        <a href="#"><i class="fab fa-twitter-square fa-2x fa-pull-right"></i></a>
+        <a href="#"><i class="fab fa-facebook-square fa-2x fa-pull-right"></i></a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Font Awesome Version 5 -->
+  <!-- <script src="https://kit.fontawesome.com/6ac3910c4e.js" crossorigin="anonymous"></script> -->
+  <!-- <script src="all.js"></script> -->
+
+</body>
+
+</html>
